@@ -67,7 +67,7 @@ class AboutController extends Controller
             unlink($old_image);
                 $image = $request->file('img');
                 $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-                Image::make($image)->resize(300,300)->save('upload/about/'.$name_gen);
+                Image::make($image)->save('upload/about/'.$name_gen);
                 $save_url = 'upload/about/'.$name_gen;
 
                 About::FindOrFail($id)->update([
@@ -82,15 +82,12 @@ class AboutController extends Controller
 
         }else{
                 About::FindOrFail($id)->update([
-                            'name'              => $request->name,
-                            'email'             => $request->email,
-                            'address'           => $request->address,
-                            'position_first'    => $request->position_first,
-                            'position_second'   => $request->position_second,
-                            'mobile'            => $request->mobile,
-                            'desp'              => $request->desp,
-                            'job'               => $request->job,
-                            'cv'                => $request->cv,
+                        'name'              => $request->name,
+                        'post_one'          => $request->post_one,
+                        'post_two'          => $request->post_two,
+                        'desp'              => $request->desp,
+                        'cv'                => $request->cv,
+                        'img'               => $save_url,
                         
                     ]);
                     $notification = array(
@@ -105,7 +102,7 @@ class AboutController extends Controller
 
     public function AboutDelete($id){
         $about = About::FindOrFail($id);
-        $img = $about->about_image;
+        $img = $about->img;
         unlink($img);
 
        About::FindOrFail($id)->delete();

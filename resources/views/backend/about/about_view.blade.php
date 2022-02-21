@@ -25,7 +25,6 @@
 							<tr>
 								<th>Image</th>
 								<th>Name</th>
-								<th>Address</th>
 								<th>First Position</th>
 								<th>Second Position</th>
 								<th>Desp</th>
@@ -44,16 +43,15 @@
 	
 	<td><img src="{{asset($about->img)}}" alt="" style="width:70px; height:40px;"></td>
 	<td>{{$about->name}}</td>
-	<td>{{$about->address}}</td>
-	<td>{{$about->position_first}}</td>
-	<td>{{$about->position_second}}</td>
-	<td>{{$about->email}}</td>
+	<td>{{$about->post_one}}</td>
+	<td>{{$about->post_two}}</td>
+	<td>{{$about->desp}}</td>
 	
 	
 	
-<td>
-<a href="{{route('about.edit',$about->id)}}" class="btn btn-warning" title="Edit Data"><i class="fa fa-edit"></i></a>
-<a href="{{route('about.delete',$about->id)}}" class="btn btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i></a>
+<td width="20%">
+<a href="{{route('about.edit',$about->id)}}" class="btn btn-info btn-sm" title="Edit Data"><i class="fa fa-edit"></i></a>
+<a href="{{route('about.delete',$about->id)}}" class="btn btn-danger btn-sm" id="delete" title="Delete Data"><i class="fa fa-trash"></i></a>
 </td>
       @endforeach      
         </tr>

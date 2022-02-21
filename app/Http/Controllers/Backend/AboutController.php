@@ -23,32 +23,22 @@ class AboutController extends Controller
         $request->validate([
             
         'name'            => 'required',
-        'email'           => 'required',
-        'address'         => 'required',
-        'position_first'  => 'required',
-        'position_second' => 'required',
-        'mobile'          => 'required',
+        'post_one'        => 'required',
+        'post_two'        => 'required',
         'desp'            => 'required',
-        'job'             => 'required',
-        'cv'              => 'required',
         'img'             => 'required',
         ]);
 
         $image = $request->file('img');
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        Image::make($image)->resize(360,360)->save('upload/about/'.$name_gen);
+        Image::make($image)->save('upload/about/'.$name_gen);
         $save_url = 'upload/about/'.$name_gen;
 
         About::insert([
-
         'name'              => $request->name,
-        'email'             => $request->email,
-        'address'           => $request->address,
-        'position_first'    => $request->position_first,
-        'position_second'   => $request->position_second,
-        'mobile'            => $request->mobile,
+        'post_one'          => $request->post_one,
+        'post_two'          => $request->post_two,
         'desp'              => $request->desp,
-        'job'               => $request->job,
         'cv'                => $request->cv,
         'img'               => $save_url,
         ]);

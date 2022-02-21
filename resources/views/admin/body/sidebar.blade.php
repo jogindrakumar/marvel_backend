@@ -52,19 +52,20 @@
           </ul>
           
         </li> 
-         <li class="treeview">
+          <li class="treeview">
           <a href="#">
-            
-            <i data-feather="bell"></i>
-            <span>What We Do</span>
+            <i data-feather="book-open"></i>
+            <span>Education</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="ti-more"></i>View What We Do</a></li>
-            
+            <li><a href="{{route('all.edu')}}"><i class="ti-more"></i>View</a></li>
+            <li><a href="{{route('add.edu')}}"><i class="ti-more"></i>Add</a></li>
+           
           </ul>
+          
         </li> 
 
          <li class="treeview">

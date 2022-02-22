@@ -48,9 +48,9 @@
 	<td>{{$edu->from}}</td>	
 	<td>{{$edu->date}}</td>	
 	<td>{{$edu->desp}}</td>	
-<td>
-<a href="{{route('edu.edit',$edu->id)}}" class="btn btn-warning" title="Edit Data"><i class="fa fa-edit"></i></a>
-<a href="{{route('edu.delete',$edu->id)}}" class="btn btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i></a>
+<td width="20%">
+<a href="{{route('edu.edit',$edu->id)}}" class="btn btn-warning btn-sm" title="Edit Data"><i class="fa fa-edit"></i></a>
+<a href="{{route('edu.delete',$edu->id)}}" class="btn btn-danger btn-sm" id="delete" title="Delete Data"><i class="fa fa-trash"></i></a>
 </td>
       @endforeach      
         </tr>

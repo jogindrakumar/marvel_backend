@@ -56,6 +56,8 @@ class EducationController extends Controller
         'degree_name'       => $request->degree_name,
         'from'              => $request->from,
         'desp'              => $request->desp,
+        'date'              => $request->date,
+        
        
         ]);
          $notification = array(

@@ -50,7 +50,7 @@
 	
 	
 <td width="20%">
-<a href="{{route('about.edit',$about->id)}}" class="btn btn-info btn-sm" title="Edit Data"><i class="fa fa-edit"></i></a>
+<a href="{{route('about.edit',$about->id)}}" class="btn btn-warning btn-sm" title="Edit Data"><i class="fa fa-edit"></i></a>
 <a href="{{route('about.delete',$about->id)}}" class="btn btn-danger btn-sm" id="delete" title="Delete Data"><i class="fa fa-trash"></i></a>
 </td>
       @endforeach      

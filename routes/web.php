@@ -5,9 +5,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\EducationController;
+use App\Http\Controllers\Backend\ExperienceController;
 use App\Models\Admin;
 use App\Models\About;
 use App\Models\Education;
+use App\Models\Experience;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,13 +65,23 @@ Route::get('/delete/{id}',[AboutController::class,'AboutDelete'])->name('about.d
 
  });
 
-  Route::prefix('education')->middleware(['auth:admin'])->group(function(){
+Route::prefix('education')->middleware(['auth:admin'])->group(function(){
 Route::get('/view',[EducationController::class,'EduView'])->name('all.edu');
 Route::get('/add',[EducationController::class,'EduAdd'])->name('add.edu');
 Route::post('/store',[EducationController::class,'EduStore'])->name('edu.store');
 Route::get('/edit/{id}',[EducationController::class,'EduEdit'])->name('edu.edit');
 Route::post('/update/{id}',[EducationController::class,'EduUpdate'])->name('edu.update');
 Route::get('/delete/{id}',[EducationController::class,'EduDelete'])->name('edu.delete');
+
+
+ });
+ Route::prefix('experience')->middleware(['auth:admin'])->group(function(){
+Route::get('/view',[ExperienceController::class,'ExpView'])->name('all.exp');
+Route::get('/add',[ExperienceController::class,'ExpAdd'])->name('add.exp');
+Route::post('/store',[ExperienceController::class,'ExpStore'])->name('exp.store');
+Route::get('/edit/{id}',[ExperienceController::class,'ExpEdit'])->name('exp.edit');
+Route::post('/update/{id}',[ExperienceController::class,'ExpUpdate'])->name('exp.update');
+Route::get('/delete/{id}',[ExperienceController::class,'ExpDelete'])->name('exp.delete');
 
 
  });

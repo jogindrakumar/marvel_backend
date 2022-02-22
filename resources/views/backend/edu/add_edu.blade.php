@@ -37,7 +37,7 @@
         <h5>Year<span class="text-danger">*</span></h5>
         <div class="controls">
         <input type="text" name="date" class="form-control"  value=""  > 
-		@error('from')
+		@error('date')
 		<span class="text-danger">{{$message}}</span>
 		@enderror
 		</div>

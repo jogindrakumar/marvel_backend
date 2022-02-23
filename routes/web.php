@@ -89,12 +89,12 @@ Route::get('/delete/{id}',[ExperienceController::class,'ExpDelete'])->name('exp.
  });
 
 Route::prefix('portfolio')->middleware(['auth:admin'])->group(function(){
-Route::get('/view',[PortfolioController::class,'ExpView'])->name('all.portfolio');
-Route::get('/add',[PortfolioController::class,'ExpAdd'])->name('add.portfolio');
-Route::post('/store',[PortfolioController::class,'ExpStore'])->name('portfolio.store');
-Route::get('/edit/{id}',[PortfolioController::class,'ExpEdit'])->name('portfolio.edit');
-Route::post('/update/{id}',[PortfolioController::class,'ExpUpdate'])->name('portfolio.update');
-Route::get('/delete/{id}',[PortfolioController::class,'ExpDelete'])->name('portfolio.delete');
+Route::get('/view',[PortfolioController::class,'PortfolioView'])->name('all.portfolio');
+Route::get('/add',[PortfolioController::class,'PortfolioAdd'])->name('add.portfolio');
+Route::post('/store',[PortfolioController::class,'PortfolioStore'])->name('portfolio.store');
+Route::get('/edit/{id}',[PortfolioController::class,'PortfolioEdit'])->name('portfolio.edit');
+Route::post('/update/{id}',[PortfolioController::class,'PortfolioUpdate'])->name('portfolio.update');
+Route::get('/delete/{id}',[PortfolioController::class,'PortfolioDelete'])->name('portfolio.delete');
 
 
  });

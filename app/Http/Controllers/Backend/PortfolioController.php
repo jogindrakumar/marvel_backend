@@ -28,7 +28,7 @@ class PortfolioController extends Controller
 
         $image = $request->file('project_img');
         $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        Image::make($image)->save('upload/portfolio/'.$name_gen);
+        Image::make($image)->resize(1504,1018)->save('upload/portfolio/'.$name_gen);
         $save_url = 'upload/portfolio/'.$name_gen;
 
         Portfolio::insert([

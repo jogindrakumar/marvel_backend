@@ -6,10 +6,12 @@ use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ExperienceController;
+use App\Http\Controllers\Backend\PortfolioController;
 use App\Models\Admin;
 use App\Models\About;
 use App\Models\Education;
 use App\Models\Experience;
+use App\Models\Portfolio;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +84,17 @@ Route::post('/store',[ExperienceController::class,'ExpStore'])->name('exp.store'
 Route::get('/edit/{id}',[ExperienceController::class,'ExpEdit'])->name('exp.edit');
 Route::post('/update/{id}',[ExperienceController::class,'ExpUpdate'])->name('exp.update');
 Route::get('/delete/{id}',[ExperienceController::class,'ExpDelete'])->name('exp.delete');
+
+
+ });
+
+Route::prefix('portfolio')->middleware(['auth:admin'])->group(function(){
+Route::get('/view',[PortfolioController::class,'ExpView'])->name('all.portfolio');
+Route::get('/add',[PortfolioController::class,'ExpAdd'])->name('add.portfolio');
+Route::post('/store',[PortfolioController::class,'ExpStore'])->name('portfolio.store');
+Route::get('/edit/{id}',[PortfolioController::class,'ExpEdit'])->name('portfolio.edit');
+Route::post('/update/{id}',[PortfolioController::class,'ExpUpdate'])->name('portfolio.update');
+Route::get('/delete/{id}',[PortfolioController::class,'ExpDelete'])->name('portfolio.delete');
 
 
  });

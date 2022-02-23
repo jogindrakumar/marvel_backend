@@ -78,7 +78,7 @@ class PortfolioController extends Controller
                 Portfolio::FindOrFail($id)->update([
                     'project_name'          => $request->project_name,
                     'project_link'          => $request->project_link,
-                    'project_img'           => $save_url,
+                
                         
                     ]);
                     $notification = array(

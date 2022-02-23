@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="{{asset('frontend/css/unicons.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/owl.theme.default.min.css')}}">
+       <!-- message toaster
+   ================================================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"> 
 
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="{{asset('frontend/css/tooplate-style.css')}}">
@@ -90,6 +93,28 @@ https://www.tooplate.com/view/2115-marvel
     <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('frontend/js/smoothscroll.js')}}"></script>
     <script src="{{asset('frontend/js/custom.js')}}"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    @if (Session::has('message')){
+        var type = "{{Session::get('alert-type','info')}}"
+        switch(type){
+            case 'info' :
+                toastr.info("{{Session::get('message')}}");
+                break;
+            case 'success' :
+            toastr.success("{{Session::get('message')}}");
+            break;
+            case 'warning' :
+                toastr.warning("{{Session::get('message')}}");
+                break;
+            case 'error' :
+                toastr.error("{{Session::get('message')}}");
+                break;    
+        }
+    }
+        
+    @endif
+</script>
 
   </body>
 </html>

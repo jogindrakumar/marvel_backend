@@ -7,11 +7,13 @@ use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\EducationController;
 use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\PortfolioController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Models\Admin;
 use App\Models\About;
 use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Portfolio;
+use App\Models\Contact;
 
 /*
 |--------------------------------------------------------------------------
@@ -96,6 +98,15 @@ Route::get('/edit/{id}',[PortfolioController::class,'PortfolioEdit'])->name('por
 Route::post('/update/{id}',[PortfolioController::class,'PortfolioUpdate'])->name('portfolio.update');
 Route::get('/delete/{id}',[PortfolioController::class,'PortfolioDelete'])->name('portfolio.delete');
 
+
+ });
+ Route::prefix('message')->middleware(['auth:admin'])->group(function(){
+Route::get('/view',[ContactController ::class,'MessageView'])->name('all.message');
+// Route::get('/add',[ContactController ::class,'MessageAdd'])->name('add.message');
+Route::post('/store',[ContactController ::class,'MessageStore'])->name('message.store');
+Route::get('/edit/{id}',[ContactController ::class,'MessageEdit'])->name('message.edit');
+Route::post('/update/{id}',[ContactController ::class,'MessageUpdate'])->name('message.update');
+Route::get('/delete/{id}',[ContactController ::class,'MessageDelete'])->name('message.delete');
 
  });
 

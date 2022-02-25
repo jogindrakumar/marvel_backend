@@ -32,7 +32,8 @@ Route::get('/', function () {
 
     $abouts = About::find(1)->get();
     $portfolios = Portfolio::latest()->get();
-    return view('home',compact('abouts','portfolios'));
+    $experiences = Experience::latest()->get();
+    return view('home',compact('abouts','portfolios','experiences'));
 });
 
 Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {

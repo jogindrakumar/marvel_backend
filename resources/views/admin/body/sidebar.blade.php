@@ -98,6 +98,20 @@
             
           </ul>
         </li> 
+
+         <li class="treeview">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Maps</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('all.map')}}"><i class="ti-more"></i>View Map</a></li>
+            
+          </ul>
+        </li> 
 		
       </ul>
     </section>

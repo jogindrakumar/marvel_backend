@@ -117,10 +117,10 @@ Route::get('/delete/{id}',[ContactController ::class,'MessageDelete'])->name('me
   Route::prefix('map')->middleware(['auth:admin'])->group(function(){
 Route::get('/view',[MapController ::class,'MapView'])->name('all.map');
 // Route::get('/add',[ContactController ::class,'MessageAdd'])->name('add.message');
-Route::post('/store',[MapController ::class,' MapStore'])->name('map.store');
-Route::get('/edit/{id}',[MapController ::class,' MapEdit'])->name('map.edit');
-Route::post('/update/{id}',[MapController ::class,' MapUpdate'])->name('map.update');
-Route::get('/delete/{id}',[MapController ::class,' MapDelete'])->name('map.delete');
+Route::post('/store',[MapController ::class,'MapStore'])->name('map.store');
+Route::get('/edit/{id}',[MapController ::class,'MapEdit'])->name('map.edit');
+Route::post('/update/{id}',[MapController ::class,'MapUpdate'])->name('map.update');
+Route::get('/delete/{id}',[MapController ::class,'MapDelete'])->name('map.delete');
 
  });
 

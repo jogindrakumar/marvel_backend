@@ -7,15 +7,18 @@
                         <small class="small-text">Welcome to <span class="mobile-block">my portfolio website!</span></small>
                         <h1 class="animated animated-text">
                             <span class="mr-2">Hey folks, I'm</span>
+                            @foreach ($abouts as $about )
+                                
+                          
                                 <div class="animated-info">
-                                    <span class="animated-item">Marvel Sann</span>
-                                    <span class="animated-item">Web Designer</span>
-                                    <span class="animated-item">UI Specialist</span>
+                                    <span class="animated-item">{{$about->name}}</span>
+                                    <span class="animated-item">{{$about->post_one}}</span>
+                                    <span class="animated-item">{{$about->post_two}}</span>
                                 </div>
                         </h1>
 
-                        <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and web development.</p>
-                        
+                        <p>{{$about->desp}}</p>
+                          
                         <div class="custom-btn-group mt-4">
                           <a href="#" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
                           <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Get a free quote</a>
@@ -27,6 +30,7 @@
                     <div class="about-image svg">
                         <img src="{{asset('frontend/images/undraw/undraw_software_engineer_lvl5.svg')}}" class="img-fluid" alt="svg image">
                     </div>
+                    @endforeach
                 </div>
 
             </div>

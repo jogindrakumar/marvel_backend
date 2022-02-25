@@ -9,35 +9,15 @@
                       </div>
 
                       <div class="owl-carousel owl-theme">
+                        @foreach ($portfolios as $portfolio )
+                          
+                    
                         <div class="item">
                           <div class="project-info">
-                            <img src="{{asset('frontend/images/project/project-image01.png')}}" class="img-fluid" alt="project image">
+                            <img src="{{asset($portfolio->project_img)}}" class="img-fluid" alt="project image">
                           </div>
                         </div>
-
-                        <div class="item">
-                          <div class="project-info">
-                            <img src="{{asset('frontend/images/project/project-image02.png')}}" class="img-fluid" alt="project image">
-                          </div>
-                        </div>
-
-                        <div class="item">
-                          <div class="project-info">
-                            <img src="{{asset('frontend/images/project/project-image03.png')}}" class="img-fluid" alt="project image">
-                          </div>
-                        </div>
-
-                        <div class="item">
-                          <div class="project-info">
-                            <img src="{{asset('frontend/images/project/project-image04.png')}}" class="img-fluid" alt="project image">
-                          </div>
-                        </div>
-
-                        <div class="item">
-                          <div class="project-info">
-                            <img src="{{asset('frontend/images/project/project-image05.png')}}" class="img-fluid" alt="project image">
-                          </div>
-                        </div>
+                   @endforeach
                       </div>
 
                   </div>

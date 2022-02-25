@@ -29,7 +29,10 @@ use App\Models\Map;
 */
 
 Route::get('/', function () {
-    return view('home');
+
+    $abouts = About::find(1)->get();
+    $portfolios = Portfolio::latest()->get();
+    return view('home',compact('abouts','portfolios'));
 });
 
 Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {

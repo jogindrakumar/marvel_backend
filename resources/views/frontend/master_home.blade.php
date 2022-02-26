@@ -78,7 +78,7 @@ https://www.tooplate.com/view/2115-marvel
 
                     <div class="col-lg-12 col-12">                                
                         <p class="copyright-text text-center">Copyright &copy; 2019 Company Name . All rights reserved</p>
-                        <p class="copyright-text text-center">Designed by <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
+                        <p class="copyright-text text-center"> <a rel="nofollow" href="https://jogindrakumar.com/" target="_blank">jogindra kumar</a></p>
                     </div>
                     
                </div>

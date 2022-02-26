@@ -4,9 +4,9 @@
           
           <div class="col-lg-5 mr-lg-5 col-12">
             <div class="google-map w-100">
-              @foreach ($maps as $map)
-                
-             
+
+            @foreach ($maps as $map )
+     
               <iframe src="{{$map->map_link}}" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                @endforeach
             </div>
@@ -19,9 +19,11 @@
                 </div>
 
                 <ul class="social-links">
-                     <li><a href="#" class="uil uil-dribbble" data-toggle="tooltip" data-placement="left" title="Dribbble"></a></li>
-                     <li><a href="#" class="uil uil-instagram" data-toggle="tooltip" data-placement="left" title="Instagram"></a></li>
-                     <li><a href="#" class="uil uil-youtube" data-toggle="tooltip" data-placement="left" title="Youtube"></a></li>
+                  @foreach ($socialmedias as $socialmedia )
+                    
+   
+                     <li><a href="{{$socialmedia->link}}" class="{{$socialmedia->icon}}" data-toggle="tooltip" data-placement="left" title="Dribbble"></a></li>
+                                  @endforeach
                 </ul>
             </div>
           </div>

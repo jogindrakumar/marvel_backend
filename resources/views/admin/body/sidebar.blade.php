@@ -112,6 +112,20 @@
             
           </ul>
         </li> 
+           <li class="treeview">
+          <a href="#">
+            <i data-feather="facebook"></i>
+            <span>Social Media</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('all.socialmedia')}}"><i class="ti-more"></i>View</a></li>
+            <li><a href="{{route('add.socialmedia')}}"><i class="ti-more"></i>Add</a></li>
+           
+          </ul>
+        </li> 
 		
       </ul>
     </section>

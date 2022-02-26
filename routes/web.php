@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\ExperienceController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\MapController;
+use App\Http\Controllers\Backend\SocialMediaController;
 use App\Models\Admin;
 use App\Models\About;
 use App\Models\Education;
@@ -16,6 +17,7 @@ use App\Models\Experience;
 use App\Models\Portfolio;
 use App\Models\Contact;
 use App\Models\Map;
+use App\Models\SocialMedia;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +36,8 @@ Route::get('/', function () {
     $portfolios = Portfolio::latest()->get();
     $experiences = Experience::latest()->get();
     $educations = Education::latest()->get();
+    $maps       = Map::latest()->get();
+    $socialmedias = SocialMedia::latest()->get();
     return view('home',compact('abouts','portfolios','experiences','educations'));
 });
 
@@ -126,6 +130,16 @@ Route::post('/store',[MapController ::class,'MapStore'])->name('map.store');
 Route::get('/edit/{id}',[MapController ::class,'MapEdit'])->name('map.edit');
 Route::post('/update/{id}',[MapController ::class,'MapUpdate'])->name('map.update');
 Route::get('/delete/{id}',[MapController ::class,'MapDelete'])->name('map.delete');
+
+ });
+  // Social Media Links
+ Route::prefix('socialmedia')->middleware(['auth:admin'])->group(function(){
+Route::get('/view',[SocialMediaController ::class,'SocialMediaView'])->name('all.socialmedia');
+Route::get('/add',[SocialMediaController ::class,'SocialMediaAdd'])->name('add.socialmedia');
+Route::post('/store',[SocialMediaController ::class,'SocialMediaStore'])->name('socialmedia.store');
+Route::get('/edit/{id}',[SocialMediaController ::class,'SocialMediaEdit'])->name('socialmedia.edit');
+Route::post('/update/{id}',[SocialMediaController ::class,'SocialMediaUpdate'])->name('socialmedia.update');
+Route::get('/delete/{id}',[SocialMediaController ::class,'SocialMediaDelete'])->name('socialmedia.delete');
 
  });
 

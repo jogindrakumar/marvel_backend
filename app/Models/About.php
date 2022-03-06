@@ -13,6 +13,8 @@ class About extends Model
         'post_one',
         'post_two',
         'desp',
+        'email',
+        'mobile',
         'cv',
         'img',
         

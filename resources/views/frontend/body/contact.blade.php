@@ -13,16 +13,20 @@
 
             <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
                 <div class="contact-info-item">
+                  @foreach ($abouts as $about )
+                    
+                  
                   <h3 class="mb-3 text-white">Say hello</h3>
-                  <p class="footer-text mb-0">010 020 0960</p>
-                  <p><a href="mailto:hello@company.co">hello@company.co</a></p>
+                  <p class="footer-text mb-0">{{$about->mobile}}</p>
+                  <p><a href="mailto:hello@company.co">{{$about->email}}</a></p>
+                  @endforeach
                 </div>
 
                 <ul class="social-links">
                   @foreach ($socialmedias as $socialmedia )
                     
    
-                     <li><a href="{{$socialmedia->link}}" class="{{$socialmedia->icon}}" data-toggle="tooltip" data-placement="left" title="Dribbble"></a></li>
+                     <li><a href="{{$socialmedia->link}}" class="{{$socialmedia->icon}}" data-toggle="tooltip" data-placement="left" title="{{$socialmedia->name}}"></a></li>
                                   @endforeach
                 </ul>
             </div>

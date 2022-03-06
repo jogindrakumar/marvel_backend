@@ -101,8 +101,10 @@ class AboutController extends Controller
                         'post_one'          => $request->post_one,
                         'post_two'          => $request->post_two,
                         'desp'              => $request->desp,
+                        'email'              => $request->email,
+                        'mobile'              => $request->mobile,
                         'cv'                => $request->cv,
-                        'img'               => $save_url,
+                       
                         
                     ]);
                     $notification = array(

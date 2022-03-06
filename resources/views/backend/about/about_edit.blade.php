@@ -52,6 +52,24 @@
 		@enderror
 	</div>
     </div>
+	<div class="form-group">
+        <h5>E-mail<span class="text-danger">*</span></h5>
+        <div class="controls">
+        <input type="email" name="email"  class="form-control"  value="{{$abouts->email}}"  > 
+	@error('email')
+		<span class="text-danger">{{$message}}</span>
+		@enderror
+	</div>
+    </div>
+	<div class="form-group">
+        <h5>Mobile<span class="text-danger">*</span></h5>
+        <div class="controls">
+        <input type="text" name="mobile"  class="form-control"  value="{{$abouts->mobile}}"  > 
+	@error('mobile')
+		<span class="text-danger">{{$message}}</span>
+		@enderror
+	</div>
+    </div>
 	<input type="hidden" name="old_img" value="{{$abouts->img}}">
 
     <img src="{{asset($abouts->img)}}" alt="" style="width:30px;height:30px">

@@ -14,7 +14,8 @@
                     
                         <div class="item">
                           <div class="project-info">
-                            <img src="{{asset($portfolio->project_img)}}" class="img-fluid" alt="project image">
+                            <a href="{{$portfolio->project_link}}" target="_blank">
+                            <img src="{{asset($portfolio->project_img)}}" class="img-fluid" alt="project image"></a>
                           </div>
                         </div>
                    @endforeach

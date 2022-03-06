@@ -28,7 +28,7 @@
 
                 <div class="col-lg-5 col-md-12 col-12">
                     <div class="about-image svg">
-                        <img src="{{asset('frontend/images/undraw/undraw_software_engineer_lvl5.svg')}}" class="img-fluid" alt="svg image">
+                        <img src="{{asset($about->img)}}" class="img-fluid" alt="svg image">
                     </div>
                     @endforeach
                 </div>

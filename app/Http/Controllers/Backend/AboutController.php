@@ -29,10 +29,21 @@ class AboutController extends Controller
         'img'             => 'required',
         ]);
 
+
         $image = $request->file('img');
-        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-        Image::make($image)->save('upload/about/'.$name_gen);
-        $save_url = 'upload/about/'.$name_gen;
+        $name_gen = hexdec(uniqid());
+        $img_ext = strtolower($image->getClientOriginalExtension());
+        $img_name = $name_gen.'.'.$img_ext;
+        $upload_location = 'upload/about/';
+        $last_image = $upload_location.$img_name;
+        $image->move($upload_location,$img_name);
+
+
+
+        // $image = $request->file('img');
+        // $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        // Image::make($image)->save('upload/about/'.$name_gen);
+        // $save_url = 'upload/about/'.$name_gen;
 
         About::insert([
         'name'              => $request->name,
@@ -40,7 +51,7 @@ class AboutController extends Controller
         'post_two'          => $request->post_two,
         'desp'              => $request->desp,
         'cv'                => $request->cv,
-        'img'               => $save_url,
+        'img'               => $last_image,
         ]);
          $notification = array(
             'message' => 'about Inserted Successfully',
@@ -66,12 +77,16 @@ class AboutController extends Controller
 
             unlink($old_image);
                 $image = $request->file('img');
-                $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-                Image::make($image)->save('upload/about/'.$name_gen);
-                $save_url = 'upload/about/'.$name_gen;
+                $name_gen = hexdec(uniqid());
+                $img_ext = strtolower($image->getClientOriginalExtension());
+                $img_name = $name_gen.'.'.$img_ext;
+                $upload_location = 'upload/about/';
+                $last_image = $upload_location.$img_name;
+                $image->move($upload_location,$img_name);
+
 
                 About::FindOrFail($id)->update([
-                    'img'               => $save_url,
+                    'img'               => $last_image,
                 ]);
                 $notification = array(
                     'message' => 'about Updated Successfully',
